@@ -1,0 +1,12 @@
+.dashboard-container {
+    &__img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: -1px -1px 9px 2px rgb(25, 118, 210);
+    }
+    @media (max-width: 480px) {
+        &__img {
+          font-size: 16px;
+        }
+      }
+}
