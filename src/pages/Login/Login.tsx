@@ -1,10 +1,9 @@
-import React from 'react'
 import { useForm } from 'react-hook-form';
 import './Login.scss';
 import logoSvg from '../../assets/logo.svg';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as Yup from 'yup';
-import { User, UserType } from '../../models/user';
+import { User } from '../../models/user';
 import { useNavigate } from "react-router-dom";
 import LoginFormValues from './models/userForm.model';
 import { retrieveMockUser } from './mock.login';

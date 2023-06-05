@@ -1,4 +1,3 @@
-import React from 'react'
 import { User, UserType } from '../models/user';
 import { useLocation, Navigate, Outlet } from "react-router-dom";
 import { useAuthUser, useIsAuthenticated } from 'react-auth-kit';

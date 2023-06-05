@@ -1,5 +1,4 @@
 import { Provider } from 'mobx-react'
-import React from 'react'
 import { AuthProvider } from 'react-auth-kit'
 import AppStore from './mobx/store';
 import App from './App';

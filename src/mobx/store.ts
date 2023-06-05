@@ -36,7 +36,7 @@ class AppStore {
 
     addProduct = () => {
         let randomName = "x".repeat(5)
-             .replace(/./g, c => 
+             .replace(/./g, _c => 
              "abcdefghijklmnopqrstuvwxyz"[Math.floor(Math.random() * 26) ] );
       
         
