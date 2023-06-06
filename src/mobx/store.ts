@@ -16,6 +16,13 @@ class AppStore {
         email: 'admin@admin.com'
     },
     {
+        firstName: 'user',
+        lastName:'user',
+        username: 'user',
+        type: UserType.USER,
+        email: 'user@user.com'
+    },
+    {
         firstName: 'user1',
         lastName:'user1',
         username: 'user1',

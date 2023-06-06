@@ -16,6 +16,8 @@ import * as jose from 'jose';
     password:  Yup.string().required('Password is required'),
   })
 
+  let errorAuth; 
+
 
   const  fakeLogin = async (user: User) => {
     const secret = new TextEncoder().encode(
@@ -40,8 +42,10 @@ const Login = () => {
         const userMocked = retrieveMockUser(data);
         if (!userMocked) {
             // TODO invalid password
+            errorAuth ='Invalid Email or password.';
+            return;
         }
-        // login(userMocked!);
+        errorAuth = undefined;
         fakeLogin(userMocked!).then((t) => {
           signIn({
             token: t,
@@ -63,12 +67,16 @@ const Login = () => {
                         <div className='login-container__error'>{errors.username?.message}</div>
                     </div>
                     <div>
-                        <input {...register("password")} placeholder="pasword is 123456 for all" 
+                        <input type='password' {...register("password")} placeholder="pasword is 123456 for all" 
                          className={`${errors.password ? 'login-container__form--is-invalid' : ''}`} />
                         <div className='login-container__error'>{errors.password?.message}</div>
                     </div>
 
                     <button type='submit'>Login</button>
+                    {
+                      errorAuth?.length && <div className='login-container__error'>{errorAuth}</div>
+                    }
+                    
                 </form>
         </div>
         
