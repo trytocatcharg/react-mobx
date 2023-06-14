@@ -3,6 +3,7 @@ import appStore
  from '../../mobx/store';
 import ProductCard from './components/ProductCard';
 import { Box } from '@mui/material';
+import emptyLogo from '../../assets/images/empty.png';
 
  function Products() {
 
@@ -15,10 +16,9 @@ import { Box } from '@mui/material';
 
         <Box
           sx={{
-            width: '90vw',
+            display: 'flex',
             height: '70vh',
             gap: '15px',
-            display: 'flex',
             flexDirection: 'row',
             flexWrap: 'wrap',
             justifyContent: 'center',
@@ -29,6 +29,10 @@ import { Box } from '@mui/material';
             appStore.products.map(p => 
               <ProductCard key={p.name} {...p}  ></ProductCard>
             )
+          }
+
+          {
+             !appStore.products.length && <img src={emptyLogo} style={{height: '20vh'}} />
           }
           </Box>
 
